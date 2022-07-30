@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Home ji page')
+@section('title','Home page')
 
 @section('content')
 
@@ -15,7 +15,7 @@
         <div style="width: 40%;background-color: #2074b8; height:2px;"></div>
 
         <!-- User First Name and Last Name -->
-        <div class="name1">Mrs. Puja Maheshwari Agrawal <span style="margin-top: 5px;display: block"><i style="font-size: 12px;">(Founder & Owner)</i></span></div>
+        <div class="name">Mrs. Puja Maheshwari Agrawal <span style="margin-top: 5px;display: block"><i style="font-size: 12px;">(Founder & Owner)</i></span></div>
 
         <div class="round-contact-buttons">
             <a target="_blank" href="tel:+919626393402">
@@ -40,10 +40,7 @@
                 </a>
         </div>
     </div>
-
-    {{-- slider-dynamic-yo --}}
     <div class="lower">
-
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
 
             <div class="carousel-inner">
@@ -74,245 +71,7 @@
             </button>
           </div>
     </div>
-
 </div>
-
-<div class="section-container" id="about-us-section">
-
-
- <h2 class="section-header">About Us</h2>
-
- <!-- products ------------contents-------->
-    <div class="container">
-
-         <h3 class="title">sorganic products </h3>
-
-
-                    {{-- products--}}
-
-
-        <div class="products-container">
-
-                    {{-- product---1 --}}
-
-
-            <div class="product" data-name="p-1">
-                <img src="{{ asset('assets/imagesproduct/1.png') }}" alt="">
-                <h3>strawberries</h3>
-                <div class="price">$2.00</div>
-            </div>
-
-
-                    {{-- product---2 --}}
-
-
-            <div class="product" data-name="p-2">
-                <img src="{{ asset('assets/imagesproduct/2.png') }}" alt="">
-                <h3>onions</h3>
-                <div class="price">$2.00</div>
-            </div>
-
-
-                    {{-- product---3 --}}
-
-
-            <div class="product" data-name="p-3">
-                <img src="{{ asset('assets/imagesproduct/3.png') }}" alt="">
-                <h3>tomatoes</h3>
-                <div class="price">$2.00</div>
-            </div>
-
-
-
-                    {{-- product---4 --}}
-
-
-
-            <div class="product" data-name="p-4">
-                <img src="{{ asset('assets/imagesproduct/4.png') }}" alt="">
-                <h3>brinjal</h3>
-                <div class="price">$2.00</div>
-            </div>
-
-
-                    {{-- product---5 --}}
-
-
-
-            <div class="product" data-name="p-5">
-                <img src="{{ asset('assets/imagesproduct/5.png') }}" alt="">
-                <h3>broccoli</h3>
-                <div class="price">$2.00</div>
-            </div>
-
-
-                    {{-- product---6 --}}
-
-
-
-            <div class="product" data-name="p-6">
-                <img src="{{ asset('assets/imagesproduct/6.png') }}" alt="">
-                <h3>potatoes</h3>
-                <div class="price">$2.00</div>
-            </div>
-
-
-                    {{---products-popup----}}
-
-            <div class="products-preview">
-
-                <div class="preview" data-target="p-1">
-                    <i class="fas fa-times"></i>
-                    <h3>organic strawberries</h3>
-
-
-                    {{---FORMS AREA---}}
-
-                    <form action="{{ route('product.store') }}" enctype="multipart/form-data" method="POST">
-                        @csrf
-
-                        <div class="mb-3">
-                            <label for="picture" class="form-label">Choose Picture</label>
-                            <input class="form-control" type="file" name="picture" id="picture">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title" id="title" placeholder="Enter title">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="price" class="form-label">Price</label>
-                            <input type="text" class="form-control" name="price" id="price" placeholder="Enter price">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" name="description" id="description" placeholder="Enter Description"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Create Product</button>
-
-                     </form>
-
-                    {{---FORMS AREA----}}
-                </div>
-
-                <div class="preview" data-target="p-2">
-                    <i class="fas fa-times"></i>
-                    <img src="images/2.png" alt="">
-                    <h3>organic onions</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>( 250 )</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
-                    <div class="price">$2.00</div>
-                    <div class="buttons">
-                        <a href="#" class="buy">buy now</a>
-                        <a href="#" class="cart">add to cart</a>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-3">
-                    <i class="fas fa-times"></i>
-                    <img src="images/3.png" alt="">
-                    <h3>organic tomatoes</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>( 250 )</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
-                    <div class="price">$2.00</div>
-                    <div class="buttons">
-                        <a href="#" class="buy">buy now</a>
-                        <a href="#" class="cart">add to cart</a>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-4">
-                    <i class="fas fa-times"></i>
-                    <img src="images/4.png" alt="">
-                    <h3>organic brinjal</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>( 250 )</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
-                    <div class="price">$2.00</div>
-                    <div class="buttons">
-                        <a href="#" class="buy">buy now</a>
-                        <a href="#" class="cart">add to cart</a>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-5">
-                    <i class="fas fa-times"></i>
-                    <img src="images/5.png" alt="">
-                    <h3>organic broccoli</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>( 250 )</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
-                    <div class="price">$2.00</div>
-                    <div class="buttons">
-                        <a href="#" class="buy">buy now</a>
-                        <a href="#" class="cart">add to cart</a>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-6">
-                    <i class="fas fa-times"></i>
-                    <img src="images/6.png" alt="">
-                    <h3>organic potatoes</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>( 250 )</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
-                    <div class="price">$2.00</div>
-                    <div class="buttons">
-                        <a href="#" class="buy">buy now</a>
-                        <a href="#" class="cart">add to cart</a>
-                    </div>
-                </div>
-
-
-                <!-- products ------------contents-------->
-
-            </div>
-
-                    {{---products-popup----}}
-
-        </div>
-
-    </div>
-
-
-<div class="section-close"></div>
-
-
 
 <div class="section-container" id="about-us-section">
     <h2 class="section-header">About Us</h2>
@@ -386,6 +145,38 @@
     <div class="section-close"></div>
 </div>
 
+<div class="section-container" id="products-services-section">
+    <h2 class="section-header">Products/Services</h2>
+    <div class="section-header-seperator" style="width: 130px;"></div>
+    <div class="p-10"></div>
+
+    <div>
+
+
+        <div class="card">
+            <ul class="unorderedList">
+
+                <li>Facebook Marketing</li>
+
+                <li>Instagram Marketing</li>
+
+                <li>Graphic Designing</li>
+
+                <li>Business Presentation</li>
+
+                <li>Video Editing</li>
+
+                <li>Bulk SMS/ Bulk Whatsapp</li>
+
+                <li>Website Designing</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-close"></div>
+
+</div>
 <div class="section-container" id="payment-options-section">
     <h2 class="section-header">Payment</h2>
     <div class="section-header-seperator"></div>
@@ -478,142 +269,29 @@
     <div class="section-close"></div>
 </div>
 
-<div class="section-container" id="enquiry-section">
-    <h2 class="section-header">sample of forms</h2>
-    <div class="section-header-seperator" style="width: 120px;"></div>
-
-    <h1 class="text-center mt-2">All Products</h1>
-    <hr>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6" style="display:flex">
-                @foreach ($products as $product)
-                <div class="card m-2 p-2" style="width: 18rem;">
-                    <img src="images/{{ $product->picture }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ $product->title }}</h5>
-                      <h5 class="card-title">Price: ${{ $product->price }}</h5>
-                      <hr>
-                      <p class="card-text">{{ $product->description}} </p>
-                      <a href="{{ route('product.show', $product->id) }}" class="btn btn-primary">View Detail</a>
-                    </div>
-                  </div>
-                @endforeach
-            </div>
-        </div>
+<div class="section-container" id="feedback-section">
+    <h2 class="section-header">Feedbacks</h2>
+    <div class="section-header-seperator"></div>
+    <div class="feedback-list" id="feedback-list"></div>
+    <div class="feedback-button-wrapper">
+        <input type="button" value="Load more feedbacks" id="load-more-feedback-btn" />
     </div>
-
-
-
-
-
-    <div class="section-close"></div>
+    <form class="feedback-form card" novalidate>
+        <div class="feedback-form-heading">Give Feedback</div>
+        <select class="star-rating" id="rating" name="rating">
+                    <option value="">Select a rating</option>
+                    <option value="5">Excellent</option>
+                    <option value="4">Very Good</option>
+                    <option value="3">Average</option>
+                    <option value="2">Poor</option>
+                    <option value="1">Terrible</option>
+                </select>
+        <input type="text" name="feedbackName" id="feedbackName" placeholder="Enter Full Name" />
+        <textarea name="feedback" id="feedback" placeholder="Enter your feedback"></textarea>
+        <!-- Message:<br/> -->
+        <input type="button" value="Give Feedback" onclick="sendFeedback(this, 'digicrafts')" />
+    </form>
 </div>
-
-
-<div class="section-container" id="enquiry-section">
-    <h2 class="section-header">comments ON products</h2>
-
-    <div class="container mt-5 mb-5">
-
-        <h2>Create Product</h2>
-        <hr>
-
-        <form action="{{ route('product.store') }}" enctype="multipart/form-data" method="POST">
-            @csrf
-
-            <div class="mb-3">
-                <label for="picture" class="form-label">Choose Picture</label>
-                <input class="form-control" type="file" name="picture" id="picture">
-              </div>
-
-            <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="Enter title">
-              </div>
-
-              <div class="mb-3">
-                <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" name="price" id="price" placeholder="Enter price">
-              </div>
-
-              <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" name="description" id="description" placeholder="Enter Description"></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary">Create Product</button>
-
-        </form>
-
-    </div>
-</div>
-
-
-<div class="section-container" id="enquiry-section">
-    <h2 class="section-header">sample of forms</h2>
-    <div class="container">
-        <div class="box">
-
-
-
-            <div class="container">
-                <h2>Popup Contact Form with Email</h2>
-
-                <!-- Trigger/Open The Modal -->
-                <button id="mbtn" class="btn btn-primary turned-button">Contact Us</button>
-
-                <!-- The Modal -->
-                <div id="modalDialog" class="modal">
-                    <div class="modal-content animate-top">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Contact Us</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-
-
-                         <form action="{{ route('product.store') }}" enctype="multipart/form-data" method="POST">
-                            @csrf
-
-                            <div class="mb-3">
-                                <label for="picture" class="form-label">Choose Picture</label>
-                                <input class="form-control" type="file" name="picture" id="picture">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="title" class="form-label">Title</label>
-                                <input type="text" class="form-control" name="title" id="title" placeholder="Enter title">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="price" class="form-label">Price</label>
-                                <input type="text" class="form-control" name="price" id="price" placeholder="Enter price">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" name="description" id="description" placeholder="Enter Description"></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Create Product</button>
-
-                         </form>
-
-
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <div class="section-close"></div>
-</div>
-
 
 <div class="section-container" id="enquiry-section">
     <h2 class="section-header">Enquiry Form</h2>

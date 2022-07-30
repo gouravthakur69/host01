@@ -32,9 +32,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/products">
+            <a class="nav-link" href="pages/tables/basic-table.html">
               <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Forms Data</span>
+              <span class="menu-title">Tables</span>
             </a>
           </li>
           <li class="nav-item">
