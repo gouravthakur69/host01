@@ -1,69 +1,6 @@
 <!doctype html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
-
-
-  <!-- digicrft extra links-->
-
-
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into Light&amp;display=swap" media="all" id="shr-font-shadows-into light">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-  <!-- css-->
-
-  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/templates/common/css/star-rating.css')}}" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css">
-
-  <!--meta-->
-
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui">
-  <meta property="og:image" itemprop="image" content="https://vcard-bucket.s3.us-east-2.amazonaws.com/A14/digicrafts/1590668843251.jpeg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="Mrs. Puja Maheshwari Agrawal (Founder & Owner)" />
-  <title>DIGICRAFTS</title>
-  <meta name="title" content="DIGICRAFTS" />
-  <link rel="manifest" id="manifest-placeholder">
-  @livewireStyles
-
-  <!-- script-->
-
-  <script>
-      var dynamicManifest = {
-          "name": "DIGICRAFTS",
-          "short_name": "DIGICRAFTS",
-          "description": "DIGICRAFTS",
-          "start_url": "http://digicraftsvisitingcard.in/digicrafts",
-          "background_color": "#000000",
-          "theme_color": "#0f4a73",
-          "icons": [{
-              "src": "https://vcard-bucket.s3.us-east-2.amazonaws.com/A14/digicrafts/1590668843251.jpeg",
-              "sizes": "256x256",
-              "type": "image/png"
-          }],
-          "display": "standalone"
-      }
-      const stringManifest = JSON.stringify(dynamicManifest);
-      const blob = new Blob([stringManifest], {
-          type: 'application/json'
-      });
-      const manifestURL = URL.createObjectURL(blob);
-      document.querySelector('#manifest-placeholder').setAttribute('href', manifestURL);
-  </script>
-
-
-
-<!-- digicrft extra links-->
-
-
-
-
-
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -83,31 +20,65 @@
     @livewireStyles
 </head>
 <body>
-
-
     <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <main class="py-4">
             @yield('content')
         </main>
     </div>
-
-
-
-
-    <!-- digicraft   extra-->
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.min.js"></script>
-    <script src="{{ asset('assets/templates/common/js/star-rating.js') }}"></script>
-    <script src="{{ asset('assets/templates/common/js/script.5.js') }}"></script>
-
-
-
-    <!-- digicraft   extra-->
-
-
 
     <!-- Scripts -->
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>

@@ -38,9 +38,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url("admin/sliders") }}">
+            <a class="nav-link" href="pages/icons/mdi.html">
               <i class="mdi mdi-emoticon menu-icon"></i>
-              <span class="menu-title">Home Slider</span>
+              <span class="menu-title">Icons</span>
             </a>
           </li>
           <li class="nav-item">
